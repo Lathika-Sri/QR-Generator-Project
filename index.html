@@ -2,5 +2,28 @@
 <html>
     <head>
         <title>QR Code Generator Project</title>
+        <link rel = "stylesheet" href ="style.css">
     </head>
+    <body>
+        <div class="container">
+            <p>Enter your text or URL</p>
+            <input type = "text" placeholder="Text or URL" id="qrText">
+            <div class="imgbox">
+                <img src = " " id ="qrImg">
+            </div>
+            <button onclick="generateQR()">Generator QR Code</button>
+            
+        </div>
+        <script>
+            let imgbox = document.getElementById("imgbox");
+            let qrImg = document.getElementById("qrImg");
+            let qrText = document.getElementById("qrText");
+
+            
+            function generateQR(){
+                     qrImg.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data= " + qrText.value;
+                     imgbox.classList.add("show-Img");
+            }
+        </script>
+    </body>
 </html>
